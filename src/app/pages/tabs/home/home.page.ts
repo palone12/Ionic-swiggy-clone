@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,15 @@ import { IonicSlides } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  banners: any[] = [];
   constructor() {}
 
-  ngOnInit() {}
-
-  swiperModules = [IonicSlides];
+  ngOnInit() {
+    this.banners = [
+      { banner: 'assets/images/food1.jpg' },
+      { banner: 'assets/images/food2.jpg' },
+      { banner: 'assets/images/food3.jpg' },
+    ];
+    console.log(this.banners);
+  }
 }

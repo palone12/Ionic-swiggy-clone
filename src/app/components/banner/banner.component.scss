@@ -1,0 +1,16 @@
+div {
+  transform: translateY(10%);
+  height: 30vh;
+  margin: 5px;
+  swiper-container {
+    --swiper-pagination-color: var(--ion-color-primary, #de0f17);
+    swiper-slide {
+      height: 25vh;
+      img {
+        width: 100%;
+        height: 22vh;
+        border-radius: 5px;
+      }
+    }
+  }
+}

@@ -8,22 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div>
-    <swiper-container [modules]="swiperModules" [slidesPerView]="1.2" [spaceBetween]="20" [autoplay]="true"
-      [pagination]="{clickable:true,dynamicBullets:true}">
-      <swiper-slide><img src="assets/images/food1.jpg" /></swiper-slide>
-      <swiper-slide><img src="assets/images/food2.jpg" /></swiper-slide>
-      <swiper-slide><img src="assets/images/food3.jpg" /></swiper-slide>
-    </swiper-container>
-  </div>
-  <ion-list>
-    <ion-list-header class="ion-margin-bottom">
-      <ion-label>
-        <h4>Restraurents Nearby</h4>
-        <p>
-          Discover unique tastes near you
-        </p>
-      </ion-label>
-    </ion-list-header>
-  </ion-list>
+  <app-banner [bannerImages]="banners"></app-banner>
+  <app-restaurant></app-restaurant>
 </ion-content>
