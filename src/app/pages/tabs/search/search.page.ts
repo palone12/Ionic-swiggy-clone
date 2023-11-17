@@ -9,27 +9,26 @@ export class SearchPage implements OnInit {
   @ViewChild('searchInput') sInput;
   query: any;
   restaurants: any[] = [];
+  isLoading: boolean = false;
   allrestaurants: any[] = [
     {
       cover:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
       name: 'Haldirams',
-      short_name: 'Ramu Kaka',
+      short_name: 'haldirams',
       cuisines: ['Gujrati', 'Marwadi', 'Punjabi'],
       rating: 5,
       delivery_time: 7,
-      distance: 2.5,
       price: 100,
     },
     {
       cover:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
       name: 'Rasraj',
-      short_name: 'Ramu Kaka',
+      short_name: 'rasraj',
       cuisines: ['South Indian'],
       rating: 5,
       delivery_time: 7.5,
-      distance: 2.5,
       price: 100,
     },
     {
@@ -40,19 +39,22 @@ export class SearchPage implements OnInit {
       cuisines: ['Indian'],
       rating: 5,
       delivery_time: 5.5,
-      distance: 5,
       price: 100,
     },
   ];
   constructor() {}
-  OnSearchChange(event) {
-    console.log(event.detail.value);
+  async OnSearchChange(event) {
     this.query = event.detail.value.toLowerCase();
     if (this.query.length > 0) {
-      this.restaurants = this.allrestaurants.filter((element: any) => {
-        return element.short_name.includes(this.query);
-      });
-      console.log(this.restaurants);
+      this.isLoading = true;
+      setTimeout(async () => {
+        this.restaurants = await this.allrestaurants.filter((element: any) => {
+          return element.short_name.includes(this.query);
+        });
+        this.isLoading = false;
+      }, 3000);
+    } else if (this.query.lenght === 0) {
+      this.query = '';
     }
   }
   ngOnInit() {
