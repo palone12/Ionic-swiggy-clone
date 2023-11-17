@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>search</ion-title>
+    <ion-searchbar #searchInput placeholder="Search for Restraurents" animated="true" debounce="800"
+      (ionChange)="OnSearchChange($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 

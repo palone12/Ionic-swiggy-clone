@@ -24,3 +24,22 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-title {
+  font-weight: bold !important;
+}
+ion-label,
+h4 {
+  font-weight: bold !important;
+  font-size: 0.9rem;
+}
+p,
+ion-note {
+  font-size: 0.8rem;
+}
+
+ion-skeleton-text {
+  --border-radius: 9999px;
+  --background: rgba(188, 0, 255, 0.065);
+  --background-rgb: 188, 0, 255;
+}

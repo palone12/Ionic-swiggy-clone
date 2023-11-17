@@ -1,33 +1,26 @@
 <ion-list>
-  <ion-list-header class="ion-margin-bottom">
-    <ion-label>
-      <h4>Restraurents Nearby</h4>
-      <p>
-        Discover unique tastes near you
-      </p>
-    </ion-label>
-  </ion-list-header>
+
   <ion-item lines="none">
     <ion-thumbnail slot="start">
-      <img src="assets/images/food3.jpg" />
+      <img [src]="restaurent?.cover ? restaurent.cover : 'assets/images/food3.jpg'" />
     </ion-thumbnail>
     <ion-label>
-      <h4>Stay Fit</h4>
+      <h4>{{restaurent?.name}}</h4>
       <ion-text color="medium">
         <p class="pStyle">
-          Italin,Mexican, Indian
+          {{getCuisine(restaurent?.cuisines)}}
         </p>
         <ion-text color="dark">
           <span>
             <ion-icon name="star"></ion-icon>
-            5 •
+            {{restaurent?.rating}} •
           </span>
 
-          25 mins . $200 for two
+          {{restaurent.distance | number:"0.0-2"}} mins . $200 for two
         </ion-text>
         <ion-text color="tertiary">
           <p class="distance">
-            2..59 Kms away
+            {{restaurent.delivery_time }} Kms away
           </p>
         </ion-text>
       </ion-text>

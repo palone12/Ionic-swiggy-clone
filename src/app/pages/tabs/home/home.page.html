@@ -8,6 +8,40 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-banner [bannerImages]="banners"></app-banner>
-  <app-restaurant></app-restaurant>
+  <div *ngIf="isLoading">
+    <ion-list-header>
+      <ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+    </ion-list-header>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+  <app-loading-restaurant *ngIf="isLoading"></app-loading-restaurant>
+  <app-banner *ngIf=" !isLoading" [bannerImages]="banners"></app-banner>
+  <ion-list *ngIf="!isLoading">
+    <ion-list-header class="ion-margin-bottom">
+      <ion-label>
+        <h4>Restraurents Nearby</h4>
+        <p>
+          Discover unique tastes near you
+        </p>
+      </ion-label>
+    </ion-list-header>
+    <ion-item-group>
+      <app-restaurant *ngFor="let res of restuarents" [restaurent]="res"></app-restaurant>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
