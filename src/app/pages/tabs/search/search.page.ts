@@ -8,6 +8,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class SearchPage implements OnInit {
   @ViewChild('searchInput') sInput;
   query: any;
+  model: any = {
+    icon: 'search-outline',
+    title: 'No Results Found',
+  };
   restaurants: any[] = [];
   isLoading: boolean = false;
   allrestaurants: any[] = [
@@ -45,6 +49,7 @@ export class SearchPage implements OnInit {
   constructor() {}
   async OnSearchChange(event) {
     this.query = event.detail.value.toLowerCase();
+    this.restaurants = [];
     if (this.query.length > 0) {
       this.isLoading = true;
       setTimeout(async () => {
@@ -53,9 +58,8 @@ export class SearchPage implements OnInit {
         });
         this.isLoading = false;
       }, 3000);
-    } else if (this.query.lenght === 0) {
-      this.query = '';
     }
+    this.restaurants = [];
   }
   ngOnInit() {
     setTimeout(() => {

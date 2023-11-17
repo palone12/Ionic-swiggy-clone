@@ -16,7 +16,8 @@
             {{restaurent?.rating}} •
           </span>
 
-          {{restaurent.distance | number:"0.0-2"}} mins . $200 for two
+          {{restaurent.distance | number:"0.0-2"}} mins .
+          {{restaurent.price | currency : 'INR'}} for two
         </ion-text>
         <ion-text color="tertiary">
           <p class="distance">
