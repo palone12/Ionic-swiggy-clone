@@ -16,6 +16,7 @@ export class SearchPage implements OnInit {
   isLoading: boolean = false;
   allrestaurants: any[] = [
     {
+      uid: '12ew',
       cover:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
       name: 'Haldirams',
@@ -23,9 +24,11 @@ export class SearchPage implements OnInit {
       cuisines: ['Gujrati', 'Marwadi', 'Punjabi'],
       rating: 5,
       delivery_time: 7,
+      distance: 2.5,
       price: 100,
     },
     {
+      uid: '123ew',
       cover:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
       name: 'Rasraj',
@@ -33,16 +36,19 @@ export class SearchPage implements OnInit {
       cuisines: ['South Indian'],
       rating: 5,
       delivery_time: 7.5,
+      distance: 2.5,
       price: 100,
     },
     {
+      uid: '1234ew',
       cover:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHm18IGPgsY84_ob-qzQ7Z3OcCZOmtBoUKA&usqp=CAU',
       name: 'Anna Saoji',
-      short_name: 'ramu',
+      short_name: 'anna',
       cuisines: ['Indian'],
       rating: 5,
       delivery_time: 5.5,
+      distance: 5,
       price: 100,
     },
   ];
@@ -58,8 +64,8 @@ export class SearchPage implements OnInit {
         });
         this.isLoading = false;
       }, 3000);
+      console.log(this.restaurants);
     }
-    this.restaurants = [];
   }
   ngOnInit() {
     setTimeout(() => {

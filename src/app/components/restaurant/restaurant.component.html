@@ -2,26 +2,26 @@
 
   <ion-item lines="none">
     <ion-thumbnail slot="start">
-      <img [src]="restaurent?.cover ? restaurent.cover : 'assets/images/food3.jpg'" />
+      <img [src]="restaurant?.cover ? restaurant.cover : 'assets/images/food3.jpg'" />
     </ion-thumbnail>
     <ion-label>
-      <h4>{{restaurent?.name}}</h4>
+      <h4>{{restaurant?.name}}</h4>
       <ion-text color="medium">
         <p class="pStyle">
-          {{getCuisine(restaurent?.cuisines)}}
+          {{getCuisine(restaurant?.cuisines)}}
         </p>
         <ion-text color="dark">
           <span>
             <ion-icon name="star"></ion-icon>
-            {{restaurent?.rating}} •
+            {{restaurant?.rating}} •
           </span>
 
-          {{restaurent.distance | number:"0.0-2"}} mins .
-          {{restaurent.price | currency : 'INR'}} for two
+          {{restaurant.distance | number:"0.0-2"}} mins .
+          {{restaurant.price | currency : 'INR'}} for two
         </ion-text>
         <ion-text color="tertiary">
           <p class="distance">
-            {{restaurent.delivery_time }} Kms away
+            {{restaurant.delivery_time }} Kms away
           </p>
         </ion-text>
       </ion-text>

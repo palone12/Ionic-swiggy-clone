@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   banners: any[] = [];
-  restuarents: any[];
+  restuarants: any[];
   isLoading: boolean = false;
   constructor() {}
 
@@ -20,8 +20,9 @@ export class HomePage implements OnInit {
         { banner: 'assets/images/food3.jpg' },
       ];
       console.log(this.banners);
-      this.restuarents = [
+      this.restuarants = [
         {
+          uid: '12ew',
           cover:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
           name: 'Haldirams',
@@ -33,6 +34,7 @@ export class HomePage implements OnInit {
           price: 100,
         },
         {
+          uid: '123ew',
           cover:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_dNLXoDDRCkGPnBCGHWez3CxJFRKr0eGlBA&usqp=CAU',
           name: 'Rasraj',
@@ -44,6 +46,7 @@ export class HomePage implements OnInit {
           price: 100,
         },
         {
+          uid: '1234ew',
           cover:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHm18IGPgsY84_ob-qzQ7Z3OcCZOmtBoUKA&usqp=CAU',
           name: 'Anna Saoji',

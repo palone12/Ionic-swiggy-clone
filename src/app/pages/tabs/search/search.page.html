@@ -16,5 +16,6 @@
       </ion-label>
     </ion-list-header>
   </ion-list>
-  <app-restaurant *ngFor="let res of restaurants" [restaurent]="res"></app-restaurant>
+  <app-restaurant [routerLink]="['/','tabs','restaurants',res.uid]" *ngFor="let res of restaurants"
+    [restaurant]="res"></app-restaurant>
 </ion-content>

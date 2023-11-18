@@ -6,11 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./restaurant.component.scss'],
 })
 export class RestaurantComponent implements OnInit {
-  @Input() restaurent: any;
+  @Input() restaurant: any;
   constructor() {}
 
   ngOnInit() {
-    console.log(this.restaurent);
+    console.log(this.restaurant);
   }
   getCuisine(cuisine) {
     return cuisine.join(', ');
