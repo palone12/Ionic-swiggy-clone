@@ -1,13 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>cart</ion-title>
+    <ion-title>Cart</ion-title>
+    <ion-buttons slot="start" *ngIf="urlCheck && urlCheck!='tabs'">
+      <ion-back-button [defaultHref]="getPreviousUrl()"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cart</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list lines="none" class="borderBottomSmall ion-padding">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img [src]="model?.restaurant?.cover ? model.restaurant.cover : 'assets/imgs/1.jpg'"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <ion-text>
+          <h4>{{model?.restaurant?.name}}</h4>
+        </ion-text>
+        <ion-note>{{model?.restaurant?.address}}</ion-note>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
