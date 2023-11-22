@@ -12,6 +12,7 @@ export class CartPage implements OnInit {
   url: any;
   model: any = {};
   deliveryCharge = 20;
+  instructions: any;
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -72,4 +73,6 @@ export class CartPage implements OnInit {
   getPreviousUrl() {
     return this.url.join('/');
   }
+  quantityPlus(i) {}
+  quantityMinus(i) {}
 }
